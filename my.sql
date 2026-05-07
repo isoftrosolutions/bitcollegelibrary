@@ -11041,6 +11041,28 @@ CREATE TABLE `users` (
 insert  into `users`(`id`,`image`,`name`,`email`,`username`,`otp`,`otp_verified`,`role`,`is_verified`,`faculty`,`year`,`part`,`crn`,`valid_upto`,`card_no`,`password`,`created_at`,`updated_at`) values 
 (1,NULL,'Admin User','admin@example.com',NULL,NULL,0,'admin',0,'computer','third','second',NULL,NULL,NULL,'$2y$12$zqFWulueU5E/Fvvn8/p6L.73Z9mR1vpvKRprs.mJXcBKsQ0qK4TgG','2026-02-01 21:08:54','2026-02-01 22:15:27');
 
+/*Table structure for table `mail_settings` */
+
+DROP TABLE IF EXISTS `mail_settings`;
+
+CREATE TABLE `mail_settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mail_host` varchar(255) NOT NULL DEFAULT 'smtp.gmail.com',
+  `mail_username` varchar(255) NOT NULL,
+  `mail_password` varchar(255) NOT NULL,
+  `mail_port` int(11) NOT NULL DEFAULT 587,
+  `mail_encryption` varchar(10) NOT NULL DEFAULT 'tls',
+  `mail_from_email` varchar(255) NOT NULL,
+  `mail_from_name` varchar(255) NOT NULL DEFAULT 'BIT Library',
+  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+
+/*Data for the table `mail_settings` */
+
+INSERT INTO `mail_settings`(`id`,`mail_host`,`mail_username`,`mail_password`,`mail_port`,`mail_encryption`,`mail_from_email`,`mail_from_name`) VALUES
+(1,'smtp.gmail.com','pdewbrath@gmail.com','nkok jcyl wztn daev',587,'tls','library@bit.edu.np','BIT Library');
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
