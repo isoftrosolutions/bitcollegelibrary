@@ -6,10 +6,19 @@ $_base_host = $_SERVER['HTTP_HOST'] ?? 'localhost';
 define('BASE_URL', (str_contains($_base_host, 'localhost') || $_base_host === '127.0.0.1') ? '/bit' : '');
 
 // Database configuration
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'bit');
+if (str_contains($_base_host, 'localhost') || $_base_host === '127.0.0.1') {
+    // Local development
+    define('DB_HOST', 'localhost');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+    define('DB_NAME', 'bit');
+} else {
+    // Production/Remote server
+    define('DB_HOST', 'sql206.infinityfree.com');
+    define('DB_USER', 'if0_41854521');
+    define('DB_PASS', '9xT61JuBU2e8IB');
+    define('DB_NAME', 'if0_41854521_club_test');
+}
 
 // Create connection
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
