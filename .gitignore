@@ -1,0 +1,4 @@
+assets/uploads/
+config/database.php
+.vscode/
+*.log

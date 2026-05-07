@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-Content \"C:\\\\Apache24\\\\htdocs\\\\bit\\\\css\\\\premium.css\")",
+      "Bash(Measure-Object -Line)",
+      "Bash(Select-Object -ExpandProperty Lines)",
+      "PowerShell(Get-Content *)",
+      "Bash(php -l \"C:\\\\Apache24\\\\htdocs\\\\bit\\\\index.php\")",
+      "Bash(php -l \"C:\\\\Apache24\\\\htdocs\\\\bit\\\\includes\\\\header-premium.php\")",
+      "Bash(php -l \"C:\\\\Apache24\\\\htdocs\\\\bit\\\\includes\\\\footer-premium.php\")",
+      "Bash(php *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git branch *)",
+      "Bash(git remote *)"
+    ]
+  }
+}

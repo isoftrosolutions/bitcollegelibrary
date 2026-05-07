@@ -1,0 +1,842 @@
+/* =============================================
+   Scholarship & Innovation Design System
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Public+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Colors - Surface */
+  --surface: #f9f9f9;
+  --surface-dim: #dadada;
+  --surface-bright: #f9f9f9;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f3f3f3;
+  --surface-container: #eeeeee;
+  --surface-container-high: #e8e8e8;
+  --surface-container-highest: #e2e2e2;
+
+  /* Colors - On Surface */
+  --on-surface: #1b1b1b;
+  --on-surface-variant: #43474f;
+  --inverse-surface: #303030;
+  --inverse-on-surface: #f1f1f1;
+
+  /* Colors - Outline */
+  --outline: #737780;
+  --outline-variant: #c3c6d1;
+  --surface-tint: #3a5f94;
+
+  /* Colors - Primary */
+  --primary: #001e40;
+  --on-primary: #ffffff;
+  --primary-container: #003366;
+  --on-primary-container: #799dd6;
+  --inverse-primary: #a7c8ff;
+
+  /* Colors - Secondary (Accent - Vibrant Orange) */
+  --secondary: #7c5800;
+  --on-secondary: #ffffff;
+  --secondary-container: #FDB913;
+  --on-secondary-container: #6c4d00;
+
+  /* Colors - Tertiary */
+  --tertiary: #1d1f1f;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #323434;
+  --on-tertiary-container: #9b9c9c;
+
+  /* Colors - Error */
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+
+  /* Colors - Fixed */
+  --primary-fixed: #d5e3ff;
+  --primary-fixed-dim: #a7c8ff;
+  --on-primary-fixed: #001b3c;
+  --on-primary-fixed-variant: #1f477b;
+  --secondary-fixed: #ffdea6;
+  --secondary-fixed-dim: #ffbb16;
+  --on-secondary-fixed: #271900;
+  --on-secondary-fixed-variant: #5e4200;
+  --tertiary-fixed: #e2e2e2;
+  --tertiary-fixed-dim: #c6c6c7;
+  --on-tertiary-fixed: #1a1c1c;
+  --on-tertiary-fixed-variant: #454747;
+
+  /* Colors - Background */
+  --background: #f9f9f9;
+  --on-background: #1b1b1b;
+  --surface-variant: #e2e2e2;
+
+  /* Typography - Display & Headlines */
+  --font-display-lg: 56px;
+  --font-headline-xl: 40px;
+  --font-headline-lg: 32px;
+  --font-headline-md: 24px;
+
+  /* Typography - Body */
+  --font-body-lg: 18px;
+  --font-body-md: 16px;
+  --font-label-md: 14px;
+  --font-caption: 12px;
+
+  /* Typography - Families */
+  --font-heading: 'Public Sans', sans-serif;
+  --font-body: 'Lexend', sans-serif;
+
+  /* Spacing */
+  --space-base: 8px;
+  --space-section: 80px;
+  --space-gutter: 24px;
+  --space-max-width: 1280px;
+
+  /* Border Radius */
+  --radius-sm: 0.125rem;
+  --radius-default: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+}
+
+/* =============================================
+   Typography
+   ============================================= */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--on-surface);
+  font-weight: 700;
+}
+
+.display-lg {
+  font-family: var(--font-heading);
+  font-size: var(--font-display-lg);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.headline-xl {
+  font-family: var(--font-heading);
+  font-size: var(--font-headline-xl);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.headline-lg {
+  font-family: var(--font-heading);
+  font-size: var(--font-headline-lg);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.headline-md {
+  font-family: var(--font-heading);
+  font-size: var(--font-headline-md);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.body-lg {
+  font-family: var(--font-body);
+  font-size: var(--font-body-lg);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.body-md {
+  font-family: var(--font-body);
+  font-size: var(--font-body-md);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.label-md {
+  font-family: var(--font-heading);
+  font-size: var(--font-label-md);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-size: var(--font-caption);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* =============================================
+   Layout & Grid
+   ============================================= */
+
+.container {
+  max-width: var(--space-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-gutter);
+}
+
+.section {
+  padding: var(--space-section) 0;
+}
+
+/* =============================================
+   Surface & Backgrounds
+   ============================================= */
+
+.bg-surface { background-color: var(--surface); }
+.bg-surface-dim { background-color: var(--surface-dim); }
+.bg-surface-container-low { background-color: var(--surface-container-low); }
+.bg-surface-container { background-color: var(--surface-container); }
+.bg-surface-container-high { background-color: var(--surface-container-high); }
+.bg-surface-variant { background-color: var(--surface-variant); }
+.bg-primary { background-color: var(--primary-container); }
+.bg-secondary { background-color: var(--secondary-container); }
+.bg-white { background-color: var(--surface-container-lowest); }
+
+.text-primary { color: var(--primary-container); }
+.text-secondary { color: var(--secondary-container); }
+.text-on-surface { color: var(--on-surface); }
+.text-on-surface-variant { color: var(--on-surface-variant); }
+
+/* =============================================
+   Components - Academic Cards
+   ============================================= */
+
+.academic-card {
+  background-color: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-default);
+  padding: calc(var(--space-base) * 3);
+  position: relative;
+  overflow: hidden;
+}
+
+.academic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--primary-container);
+}
+
+.academic-card-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--on-surface);
+  margin-bottom: var(--space-base);
+}
+
+.academic-card-description {
+  font-family: var(--font-body);
+  font-size: var(--font-body-md);
+  color: var(--on-surface-variant);
+  margin-bottom: calc(var(--space-base) * 2);
+}
+
+.academic-card-link {
+  font-family: var(--font-heading);
+  font-size: var(--font-label-md);
+  font-weight: 600;
+  color: var(--secondary-container);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-base);
+  transition: color 0.2s ease;
+}
+
+.academic-card-link:hover {
+  color: var(--on-secondary-container);
+}
+
+/* =============================================
+   Components - Faculty Profiles
+   ============================================= */
+
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-gutter);
+}
+
+.faculty-card {
+  background-color: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-default);
+  padding: calc(var(--space-base) * 3);
+  text-align: center;
+}
+
+.faculty-image {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-default);
+  object-fit: cover;
+  margin-bottom: calc(var(--space-base) * 2);
+  background-color: var(--surface-container);
+}
+
+.faculty-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--on-surface);
+  margin-bottom: var(--space-base);
+}
+
+.faculty-credentials {
+  font-family: var(--font-heading);
+  font-size: var(--font-label-md);
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* =============================================
+   Components - Buttons & CTAs
+   ============================================= */
+
+.btn-primary {
+  background-color: var(--secondary-container);
+  color: var(--on-surface);
+  font-family: var(--font-heading);
+  font-size: var(--font-label-md);
+  font-weight: 600;
+  padding: calc(var(--space-base) * 1.5) calc(var(--space-base) * 3);
+  border: none;
+  border-radius: var(--radius-default);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(253, 185, 19, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-container);
+  font-family: var(--font-heading);
+  font-size: var(--font-label-md);
+  font-weight: 600;
+  padding: calc(var(--space-base) * 1.5) calc(var(--space-base) * 3);
+  border: 1px solid var(--primary-container);
+  border-radius: var(--radius-default);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-container);
+  color: var(--on-primary);
+}
+
+/* =============================================
+   Components - Input Fields
+   ============================================= */
+
+.form-group {
+  margin-bottom: calc(var(--space-base) * 2);
+}
+
+.form-label {
+  font-family: var(--font-heading);
+  font-size: var(--font-label-md);
+  font-weight: 600;
+  color: var(--on-surface);
+  display: block;
+  margin-bottom: var(--space-base);
+}
+
+.form-input {
+  width: 100%;
+  padding: calc(var(--space-base) * 1.5);
+  font-family: var(--font-body);
+  font-size: var(--font-body-md);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-default);
+  background-color: var(--surface-container-lowest);
+  color: var(--on-surface);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-container);
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--on-surface-variant);
+}
+
+/* =============================================
+   Components - Chips & Tags
+   ============================================= */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: calc(var(--space-base) * 0.75) calc(var(--space-base) * 1.5);
+  font-family: var(--font-heading);
+  font-size: var(--font-label-md);
+  font-weight: 600;
+  background-color: var(--primary-fixed);
+  color: var(--on-primary-fixed);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.chip:hover {
+  background-color: var(--primary-fixed-dim);
+}
+
+.chip-secondary {
+  background-color: var(--secondary-fixed);
+  color: var(--on-secondary-fixed);
+}
+
+.chip-secondary:hover {
+  background-color: var(--secondary-fixed-dim);
+}
+
+/* =============================================
+   Utility Classes
+   ============================================= */
+
+.shadow-sm {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-lg {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.elevation-card {
+  box-shadow: 0 2px 8px rgba(0, 51, 102, 0.08);
+}
+
+.elevation-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.12);
+}
+
+.border-default {
+  border: 1px solid var(--outline-variant);
+}
+
+.rounded-default {
+  border-radius: var(--radius-default);
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+/* =============================================
+   Enhanced Cards - Stats Counter
+   ============================================= */
+
+.stats-card {
+  background-color: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-default);
+  padding: calc(var(--space-base) * 3);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--primary-container);
+}
+
+.stats-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.12);
+}
+
+.stats-card-number {
+  font-family: var(--font-heading);
+  font-size: var(--font-headline-lg);
+  font-weight: 700;
+  color: var(--primary-container);
+  line-height: 1;
+  margin-bottom: var(--space-base);
+}
+
+.stats-card-text {
+  font-family: var(--font-body);
+  font-size: var(--font-body-md);
+  color: var(--on-surface-variant);
+  line-height: 1.4;
+}
+
+/* =============================================
+   Enhanced Cards - Course/Program Cards
+   ============================================= */
+
+.program-card {
+  background-color: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-default);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 51, 102, 0.15);
+}
+
+.program-card-header {
+  background-color: var(--primary-container);
+  padding: calc(var(--space-base) * 3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+}
+
+.program-card-header i {
+  font-size: 48px;
+  color: var(--inverse-primary);
+  opacity: 0.8;
+}
+
+.program-card-body {
+  padding: calc(var(--space-base) * 3);
+}
+
+.program-card-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-headline-md);
+  font-weight: 700;
+  color: var(--on-surface);
+  margin-bottom: var(--space-base);
+}
+
+.program-card-description {
+  font-family: var(--font-body);
+  font-size: var(--font-body-md);
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+  margin-bottom: calc(var(--space-base) * 2);
+}
+
+.program-card-link {
+  font-family: var(--font-heading);
+  font-size: var(--font-label-md);
+  font-weight: 600;
+  color: var(--secondary-container);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-base);
+  transition: color 0.2s ease;
+}
+
+.program-card-link:hover {
+  color: var(--on-secondary-container);
+}
+
+/* =============================================
+   Enhanced Cards - Book Cards
+   ============================================= */
+
+.book-card-enhanced {
+  background-color: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-default);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card-enhanced:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 51, 102, 0.12);
+}
+
+.book-card-enhanced .book-cover {
+  background-color: var(--surface-container);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.book-card-enhanced .book-category {
+  position: absolute;
+  top: calc(var(--space-base) * 2);
+  left: calc(var(--space-base) * 2);
+}
+
+.book-card-enhanced .book-info {
+  padding: calc(var(--space-base) * 2);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card-enhanced .book-title {
+  font-family: var(--font-heading);
+  font-size: var(--font-body-lg);
+  font-weight: 600;
+  color: var(--on-surface);
+  margin-bottom: var(--space-base);
+}
+
+.book-card-enhanced .book-author {
+  font-family: var(--font-body);
+  font-size: var(--font-body-md);
+  color: var(--on-surface-variant);
+  margin-bottom: calc(var(--space-base) * 2);
+}
+
+.book-card-enhanced .book-actions {
+  margin-top: auto;
+}
+
+/* =============================================
+   Enhanced Cards - Testimonial Cards
+   ============================================= */
+
+.testimonial-card-enhanced {
+  background-color: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-default);
+  padding: calc(var(--space-base) * 3);
+  position: relative;
+}
+
+.testimonial-card-enhanced .quote-icon {
+  position: absolute;
+  top: calc(var(--space-base) * 2);
+  right: calc(var(--space-base) * 2);
+  font-size: 32px;
+  color: var(--secondary-container);
+  opacity: 0.3;
+}
+
+.testimonial-card-enhanced .quote-text {
+  font-family: var(--font-body);
+  font-size: var(--font-body-md);
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: calc(var(--space-base) * 2);
+}
+
+.testimonial-card-enhanced .author-name {
+  font-family: var(--font-heading);
+  font-size: var(--font-body-lg);
+  font-weight: 600;
+  color: var(--on-surface);
+}
+
+.testimonial-card-enhanced .author-info {
+  font-family: var(--font-body);
+  font-size: var(--font-caption);
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* =============================================
+   Enhanced Buttons
+   ============================================= */
+
+.btn-cta {
+  background-color: var(--secondary-container);
+  color: var(--on-surface);
+  font-family: var(--font-heading);
+  font-size: var(--font-label-md);
+  font-weight: 600;
+  padding: calc(var(--space-base) * 1.5) calc(var(--space-base) * 3);
+  border: none;
+  border-radius: var(--radius-default);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-base);
+}
+
+.btn-cta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(253, 185, 19, 0.4);
+  color: var(--on-surface);
+}
+
+.btn-cta-outline {
+  background-color: transparent;
+  color: var(--primary-container);
+  font-family: var(--font-heading);
+  font-size: var(--font-label-md);
+  font-weight: 600;
+  padding: calc(var(--space-base) * 1.5) calc(var(--space-base) * 3);
+  border: 1px solid var(--primary-container);
+  border-radius: var(--radius-default);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-base);
+}
+
+.btn-cta-outline:hover {
+  background-color: var(--primary-container);
+  color: var(--on-primary);
+}
+
+/* =============================================
+   Enhanced Form Inputs
+   ============================================= */
+
+.form-input-enhanced {
+  width: 100%;
+  padding: calc(var(--space-base) * 1.5);
+  font-family: var(--font-body);
+  font-size: var(--font-body-md);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-default);
+  background-color: var(--surface-container-lowest);
+  color: var(--on-surface);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input-enhanced:focus {
+  outline: none;
+  border-color: var(--primary-container);
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+}
+
+.form-input-enhanced::placeholder {
+  color: var(--on-surface-variant);
+}
+
+.form-label-enhanced {
+  font-family: var(--font-heading);
+  font-size: var(--font-label-md);
+  font-weight: 600;
+  color: var(--on-surface);
+  display: block;
+  margin-bottom: var(--space-base);
+}
+
+/* =============================================
+   Enhanced Chips/Badges
+   ============================================= */
+
+.chip-enhanced {
+  display: inline-flex;
+  align-items: center;
+  padding: calc(var(--space-base) * 0.75) calc(var(--space-base) * 1.5);
+  font-family: var(--font-heading);
+  font-size: var(--font-label-md);
+  font-weight: 600;
+  background-color: var(--primary-fixed);
+  color: var(--on-primary-fixed);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.chip-enhanced:hover {
+  background-color: var(--primary-fixed-dim);
+  color: var(--on-primary-fixed);
+}
+
+.chip-enhanced-secondary {
+  background-color: var(--secondary-fixed);
+  color: var(--on-secondary-fixed);
+}
+
+.chip-enhanced-secondary:hover {
+  background-color: var(--secondary-fixed-dim);
+}
+
+/* =============================================
+   Dashboard Stat Cards
+   ============================================= */
+
+.dashboard-stat-card {
+  background-color: var(--surface-container-lowest);
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-default);
+  padding: calc(var(--space-base) * 2.5);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--space-base) * 2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.08);
+}
+
+.dashboard-stat-card .stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.dashboard-stat-card .stat-icon-primary {
+  background-color: var(--primary-fixed);
+  color: var(--primary-container);
+}
+
+.dashboard-stat-card .stat-icon-secondary {
+  background-color: var(--secondary-fixed);
+  color: var(--on-secondary-fixed-variant);
+}
+
+.dashboard-stat-card .stat-content {
+  flex: 1;
+}
+
+.dashboard-stat-card .stat-value {
+  font-family: var(--font-heading);
+  font-size: var(--font-headline-md);
+  font-weight: 700;
+  color: var(--on-surface);
+  line-height: 1;
+}
+
+.dashboard-stat-card .stat-label {
+  font-family: var(--font-body);
+  font-size: var(--font-label-md);
+  color: var(--on-surface-variant);
+  margin-top: var(--space-base);
+}
