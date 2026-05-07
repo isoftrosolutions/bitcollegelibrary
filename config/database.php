@@ -14,10 +14,11 @@ if (str_contains($_base_host, 'localhost') || $_base_host === '127.0.0.1') {
     define('DB_NAME', 'bit');
 } else {
     // Production/Remote server
-    define('DB_HOST', 'sql206.infinityfree.com');
-    define('DB_USER', 'if0_41854521');
-    define('DB_PASS', '9xT61JuBU2e8IB');
-    define('DB_NAME', 'if0_41854521_club_test');
+    define('DB_HOST', 'localhost');
+    define('DB_USER', 'ektamultp_bit');
+    define('DB_PASS', 'zDJ+iZNrsU,-YKp4');
+    define('DB_NAME', 'ektamultp_bit');
+    define('DB_PORT', 3306);
 }
 
 // Create connection
