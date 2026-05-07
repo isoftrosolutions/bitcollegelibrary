@@ -4,7 +4,7 @@
 
 echo "Testing remote database connection...\n\n";
 
-$host = 'localhost';
+$host = 'deschoolproject.com';
 $user = 'ektamultp_bit';
 $pass = 'zDJ+iZNrsU,-YKp4';
 $db = 'ektamultp_bit';

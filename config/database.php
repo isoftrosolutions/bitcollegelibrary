@@ -14,7 +14,7 @@ if (str_contains($_base_host, 'localhost') || $_base_host === '127.0.0.1') {
     define('DB_NAME', 'bit');
 } else {
     // Production/Remote server
-    define('DB_HOST', 'localhost');
+    define('DB_HOST', 'deschoolproject.com');
     define('DB_USER', 'ektamultp_bit');
     define('DB_PASS', 'zDJ+iZNrsU,-YKp4');
     define('DB_NAME', 'ektamultp_bit');
