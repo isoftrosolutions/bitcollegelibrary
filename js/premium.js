@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const hero = document.querySelector('.hero');
     
     function handleHeaderScroll() {
-        const heroBottom = hero ? hero.offsetHeight : 200;
-        
+        if (!header) return;
+
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
             header.classList.remove('transparent');
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             header.classList.add('transparent');
         }
     }
-    
+
     window.addEventListener('scroll', handleHeaderScroll);
     handleHeaderScroll();
     
