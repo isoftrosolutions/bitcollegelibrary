@@ -5,6 +5,9 @@ Options -Indexes
     RewriteEngine On
     RewriteBase /
 
+    # Serve logo as favicon fallback
+    RewriteRule ^favicon\.ico$ /assets/images/logo.png [L,R=301]
+
     # Force HTTPS (uncomment once SSL is active)
     # RewriteCond %{HTTPS} off
     # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

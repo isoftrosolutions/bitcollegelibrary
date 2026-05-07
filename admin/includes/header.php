@@ -20,6 +20,8 @@ if (!is_admin()) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="<?= BASE_URL ?>/assets/images/logo.png">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?= BASE_URL ?>/css/modern.css">
     <script>window.BASE_URL = '<?= BASE_URL ?>';</script>
