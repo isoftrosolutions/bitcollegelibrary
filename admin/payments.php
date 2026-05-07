@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $page = 'payments';
 $page_title = 'Fee Payment Verification';
 require_once 'includes/header.php'; // Corrected path for admin includes
@@ -52,8 +52,8 @@ $res = $conn->query($sql);
                         <div class="small text-gray"><?php echo htmlspecialchars($payment['email']); ?></div>
                     </td>
                     <td>
-                        <a href="/bit/assets/uploads/fees/<?php echo $payment['fee_slip_image']; ?>" target="_blank">
-                            <img src="/bit/assets/uploads/fees/<?php echo $payment['fee_slip_image']; ?>" alt="Fee Slip" class="rounded" style="width: 100px; height: 60px; object-fit: cover; border: 1px solid var(--border-color);">
+                        <a href="<?= BASE_URL ?>/assets/uploads/fees/<?php echo $payment['fee_slip_image']; ?>" target="_blank">
+                            <img src="<?= BASE_URL ?>/assets/uploads/fees/<?php echo $payment['fee_slip_image']; ?>" alt="Fee Slip" class="rounded" style="width: 100px; height: 60px; object-fit: cover; border: 1px solid var(--border-color);">
                         </a>
                     </td>
                     <td>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once '../config/database.php';
 require_once '../includes/functions.php';
 
@@ -123,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <form method="POST" action="" enctype="multipart/form-data" id="profileForm">
                         <div class="profile-avatar-container">
                             <?php if ($user['image']): ?>
-                                <img src="/bit/assets/uploads/users/<?php echo $user['image']; ?>" alt="Profile" class="profile-avatar" id="avatarPreview">
+                                <img src="<?= BASE_URL ?>/assets/uploads/users/<?php echo $user['image']; ?>" alt="Profile" class="profile-avatar" id="avatarPreview">
                             <?php else: ?>
                                 <div class="profile-avatar d-flex align-items-center justify-content-center" id="avatarPreview">
                                     <i class="fas fa-user fa-4x text-gray"></i>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once '../config/database.php';
 
 if (isset($_GET['id'])) {
@@ -16,7 +16,7 @@ if (isset($_GET['id'])) {
             <div class="col-md-4">
                 <div class="text-center mb-3">
                     <?php if ($book['image']): ?>
-                        <img src="/bit/assets/uploads/books/<?php echo $book['image']; ?>" alt="Book Cover" class="img-fluid rounded shadow" style="max-height: 250px;">
+                        <img src="<?= BASE_URL ?>/assets/uploads/books/<?php echo $book['image']; ?>" alt="Book Cover" class="img-fluid rounded shadow" style="max-height: 250px;">
                     <?php else: ?>
                         <i class="fas fa-book fa-5x text-teal"></i>
                     <?php endif; ?>
@@ -25,7 +25,7 @@ if (isset($_GET['id'])) {
                     <?php if (isset($_SESSION['user_id'])): ?>
                     <button class="btn btn-register"><i class="fas fa-bookmark"></i> Borrow Book</button>
                     <?php else: ?>
-                    <a href="/bit/pages/login.php" class="btn btn-secondary">Login to Borrow</a>
+                    <a href="<?= BASE_URL ?>/pages/login.php" class="btn btn-secondary">Login to Borrow</a>
                     <?php endif; ?>
                     <button class="btn btn-outline-teal"><i class="fas fa-heart"></i> Add to Wishlist</button>
                 </div>

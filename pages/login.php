@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once '../config/database.php';
 require_once '../includes/functions.php';
 
@@ -60,7 +60,7 @@ require_once '../includes/header.php';
         <div class="card book-card border-0 shadow-lg p-4">
             <div class="text-center mb-4">
                 <div class="mb-4">
-                    <img src="/bit/assets/images/logo.png" alt="BIT Logo" style="width: 80px;">
+                    <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="BIT Logo" style="width: 80px;">
                 </div>
                 <h1 class="hero-title" style="font-size: 2.2rem;">Welcome <span class="text-teal">Back</span></h1>
                 <p class="text-gray">Login to access your library account</p>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $page = 'dashboard';
 $page_title = 'Dashboard Overview';
 require_once 'includes/header.php';
@@ -75,7 +75,7 @@ $pending_payments = $conn->query("SELECT COUNT(*) as count FROM payments WHERE s
         <div class="card-admin h-100">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h5 class="mb-0 fw-bold">Recent Book Additions</h5>
-                <a href="/bit/admin/books/index.php" class="btn btn-sm btn-outline-teal">View All</a>
+                <a href="<?= BASE_URL ?>/admin/books/index.php" class="btn btn-sm btn-outline-teal">View All</a>
             </div>
             <div class="table-responsive">
                 <table class="table table-dark-custom">
@@ -106,10 +106,10 @@ $pending_payments = $conn->query("SELECT COUNT(*) as count FROM payments WHERE s
         <div class="card-admin h-100">
             <h5 class="mb-4 fw-bold">Admin Actions</h5>
             <div class="d-grid gap-3">
-                <a href="/bit/admin/books/add.php" class="btn btn-register text-start py-3">
+                <a href="<?= BASE_URL ?>/admin/books/add.php" class="btn btn-register text-start py-3">
                     <i class="fas fa-plus-circle me-2"></i> Add New Book
                 </a>
-                <a href="/bit/admin/users/add.php" class="btn btn-outline-teal text-start py-3">
+                <a href="<?= BASE_URL ?>/admin/users/add.php" class="btn btn-outline-teal text-start py-3">
                     <i class="fas fa-user-plus me-2"></i> Add New User
                 </a>
                 <button class="btn btn-outline-teal text-start py-3">
@@ -138,8 +138,8 @@ $pending_payments = $conn->query("SELECT COUNT(*) as count FROM payments WHERE s
                                 <small class="text-gray"><?php echo date('M d, Y h:i A', strtotime($notif['created_at'])); ?></small>
                             </div>
                             <div class="d-flex gap-2">
-                                <a href="/bit/admin/users/verify.php?id=<?php echo $notif['user_id']; ?>&notif_id=<?php echo $notif['id']; ?>" class="btn btn-sm btn-register">Verify User</a>
-                                <a href="/bit/admin/clear_notif.php?id=<?php echo $notif['id']; ?>" class="btn btn-sm btn-outline-teal"><i class="fas fa-check"></i></a>
+                                <a href="<?= BASE_URL ?>/admin/users/verify.php?id=<?php echo $notif['user_id']; ?>&notif_id=<?php echo $notif['id']; ?>" class="btn btn-sm btn-register">Verify User</a>
+                                <a href="<?= BASE_URL ?>/admin/clear_notif.php?id=<?php echo $notif['id']; ?>" class="btn btn-sm btn-outline-teal"><i class="fas fa-check"></i></a>
                             </div>
                         </div>
                     <?php endforeach; ?>

@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Could implement a search modal here
             const searchInput = prompt('Search for courses, books, or information:');
             if (searchInput) {
-                window.location.href = '/bit/pages/books.php?search=' + encodeURIComponent(searchInput);
+                window.location.href = (window.BASE_URL || '') + '/pages/books.php?search=' + encodeURIComponent(searchInput);
             }
         });
     }

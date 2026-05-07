@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once '../config/database.php';
 require_once '../includes/functions.php';
 
@@ -21,7 +21,7 @@ require_once '../includes/header.php';
             <div class="book-card">
                 <div class="book-img-placeholder">
                     <?php if ($book['image']): ?>
-                        <img src="/bit/assets/uploads/books/<?php echo $book['image']; ?>" alt="Book Cover" class="img-fluid rounded" style="height: 100%; width: 100%; object-fit: cover;">
+                        <img src="<?= BASE_URL ?>/assets/uploads/books/<?php echo $book['image']; ?>" alt="Book Cover" class="img-fluid rounded" style="height: 100%; width: 100%; object-fit: cover;">
                     <?php else: ?>
                         <i class="fas fa-book-reader"></i>
                     <?php endif; ?>
@@ -30,7 +30,7 @@ require_once '../includes/header.php';
                 <p class="book-author">By <?php echo htmlspecialchars($book['author']); ?></p>
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="badge bg-teal-light text-teal">New</span>
-                    <a href="/bit/pages/books.php?sn=<?php echo $book['sn']; ?>" class="btn btn-sm btn-register">Details</a>
+                    <a href="<?= BASE_URL ?>/pages/books.php?sn=<?php echo $book['sn']; ?>" class="btn btn-sm btn-register">Details</a>
                 </div>
             </div>
         </div>

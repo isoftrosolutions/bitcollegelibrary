@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $page = 'books';
 $page_title = 'Books Management';
 require_once '../includes/header.php';
@@ -36,7 +36,7 @@ $books = get_all_books($search);
                 <tr>
                     <td>
                         <?php if ($book['image']): ?>
-                            <img src="/bit/assets/uploads/books/<?php echo $book['image']; ?>" alt="Book" style="width: 40px; height: 50px; object-fit: cover; border-radius: 4px;">
+                            <img src="<?= BASE_URL ?>/assets/uploads/books/<?php echo $book['image']; ?>" alt="Book" style="width: 40px; height: 50px; object-fit: cover; border-radius: 4px;">
                         <?php else: ?>
                             <div class="bg-dark d-flex align-items-center justify-content-center" style="width: 40px; height: 50px; border-radius: 4px;">
                                 <i class="fas fa-book text-gray small"></i>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once '../config/database.php';
 require_once '../includes/functions.php';
 
@@ -167,7 +167,7 @@ require_once '../includes/header.php';
     <!-- The Card -->
     <div class="card-print-area">
         <div class="card-header-bit">
-            <img src="/bit/assets/images/logo.png" class="bit-logo-card" alt="BIT">
+            <img src="<?= BASE_URL ?>/assets/images/logo.png" class="bit-logo-card" alt="BIT">
             <div class="bit-text-card">
                 <h2>Birgunj Institute of Technology</h2>
                 <p>(An Engineering College affiliated to CTEVT)</p>
@@ -206,7 +206,7 @@ require_once '../includes/header.php';
             
             <div class="photo-area">
                 <?php if ($user['image']): ?>
-                    <img src="/bit/assets/uploads/users/<?php echo $user['image']; ?>" alt="Photo">
+                    <img src="<?= BASE_URL ?>/assets/uploads/users/<?php echo $user['image']; ?>" alt="Photo">
                 <?php else: ?>
                     <i class="fas fa-user-circle fa-5x text-silver"></i>
                 <?php endif; ?>

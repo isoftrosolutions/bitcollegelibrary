@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,16 +21,17 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- Design System CSS -->
-    <link rel="stylesheet" href="/bit/css/design-system.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/css/design-system.css">
 
     <!-- Modern CSS (navbar & base styles) -->
-    <link rel="stylesheet" href="/bit/css/modern.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/css/modern.css">
 
     <!-- Premium CSS (page content styles) -->
-    <link rel="stylesheet" href="/bit/css/premium.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/css/premium.css">
 
-    <link rel="icon" type="image/png" href="/bit/assets/images/logo.png">
+    <link rel="icon" type="image/png" href="<?= BASE_URL ?>/assets/images/logo.png">
 
+    <script>window.BASE_URL = '<?= BASE_URL ?>';</script>
     <script>
         // Prevent theme flicker
         (function() {
@@ -45,8 +46,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <!-- Brand -->
-        <a class="navbar-brand d-flex align-items-center me-auto" href="/bit/index.php">
-            <img src="/bit/assets/images/logo.png" alt="BIT Logo" class="brand-logo">
+        <a class="navbar-brand d-flex align-items-center me-auto" href="<?= BASE_URL ?>/index.php">
+            <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="BIT Logo" class="brand-logo">
             <div class="brand-text ms-2">
                 <span class="brand-title">BIT Library</span>
             </div>
@@ -70,7 +71,7 @@
 
         <!-- Mobile Search Bar (Hidden by default) -->
         <div id="mobile-search-bar" class="d-lg-none w-100 mt-2 d-none">
-            <form action="/bit/pages/books.php" method="GET" class="position-relative">
+            <form action="<?= BASE_URL ?>/pages/books.php" method="GET" class="position-relative">
                 <input type="text" name="search" class="form-control shadow-sm rounded-pill py-2 ps-4"
                        placeholder="Search books, authors..." autofocus>
                 <button type="submit" class="btn position-absolute top-50 end-0 translate-middle-y text-primary pe-3">
@@ -85,14 +86,14 @@
             <ul class="navbar-nav mx-lg-auto mb-3 mb-lg-0 mt-3 mt-lg-0">
                 <li class="nav-item">
                     <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) === 'index.php') ? 'active' : ''; ?>"
-                       href="/bit/index.php">Library Home</a>
+                       href="<?= BASE_URL ?>/index.php">Library Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?php echo (basename($_SERVER['PHP_SELF']) === 'books.php') ? 'active' : ''; ?>"
-                       href="/bit/pages/books.php">Books Catalog</a>
+                       href="<?= BASE_URL ?>/pages/books.php">Books Catalog</a>
                 </li>
                 <li class="nav-item d-lg-none">
-                    <a class="nav-link" href="/bit/pages/latest.php">Latest Arrivals</a>
+                    <a class="nav-link" href="<?= BASE_URL ?>/pages/latest.php">Latest Arrivals</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://bit.edu.np/notices/" target="_blank">Notices</a>
@@ -110,7 +111,7 @@
                 </div>
 
                 <!-- Search (Visible on Desktop) -->
-                <form action="/bit/pages/books.php" method="GET"
+                <form action="<?= BASE_URL ?>/pages/books.php" method="GET"
                       class="header-search d-none d-lg-block mb-3 mb-lg-0 me-lg-4 order-last order-lg-0">
                     <div class="input-group">
                         <span class="input-group-text bg-transparent border-0 text-gray pe-0">
@@ -148,23 +149,23 @@
                                         <?php echo htmlspecialchars($_SESSION['user_name'] ?? 'User'); ?>
                                     </span>
                                 </li>
-                                <li><a class="dropdown-item rounded-2 py-2 mb-1" href="/bit/pages/profile.php">
+                                <li><a class="dropdown-item rounded-2 py-2 mb-1" href="<?= BASE_URL ?>/pages/profile.php">
                                     <i class="fas fa-id-card me-2 text-primary"></i> My Profile</a></li>
-                                <li><a class="dropdown-item rounded-2 py-2 mb-1" href="/bit/pages/dashboard.php">
+                                <li><a class="dropdown-item rounded-2 py-2 mb-1" href="<?= BASE_URL ?>/pages/dashboard.php">
                                     <i class="fas fa-tachometer-alt me-2 text-info"></i> Dashboard</a></li>
                                 <?php if (is_admin()): ?>
-                                <li><a class="dropdown-item rounded-2 py-2 mb-1" href="/bit/admin/dashboard.php">
+                                <li><a class="dropdown-item rounded-2 py-2 mb-1" href="<?= BASE_URL ?>/admin/dashboard.php">
                                     <i class="fas fa-cog me-2 text-warning"></i> Admin Panel</a></li>
                                 <?php endif; ?>
                                 <li><hr class="dropdown-divider opacity-10 my-1"></li>
-                                <li><a class="dropdown-item rounded-2 py-2 text-danger" href="/bit/logout.php">
+                                <li><a class="dropdown-item rounded-2 py-2 text-danger" href="<?= BASE_URL ?>/logout.php">
                                     <i class="fas fa-sign-out-alt me-2"></i> Logout</a></li>
                             </ul>
                         </div>
                     <?php else: ?>
                         <div class="d-flex gap-2 w-100 w-lg-auto">
-                            <a href="/bit/pages/login.php" class="btn-login text-decoration-none flex-grow-1 flex-lg-grow-0">Login</a>
-                            <a href="/bit/pages/register.php" class="btn-register text-decoration-none flex-grow-1 flex-lg-grow-0">Join</a>
+                            <a href="<?= BASE_URL ?>/pages/login.php" class="btn-login text-decoration-none flex-grow-1 flex-lg-grow-0">Login</a>
+                            <a href="<?= BASE_URL ?>/pages/register.php" class="btn-register text-decoration-none flex-grow-1 flex-lg-grow-0">Join</a>
                         </div>
                     <?php endif; ?>
                 </div>
@@ -175,15 +176,15 @@
 
 <!-- Mobile Bottom Navigation -->
 <div class="mobile-bottom-nav d-flex justify-content-around d-lg-none">
-    <a href="/bit/index.php" class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) === 'index.php') ? 'active' : ''; ?>">
+    <a href="<?= BASE_URL ?>/index.php" class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) === 'index.php') ? 'active' : ''; ?>">
         <i class="fas fa-home"></i>
         <span>Home</span>
     </a>
-    <a href="/bit/pages/books.php" class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) === 'books.php') ? 'active' : ''; ?>">
+    <a href="<?= BASE_URL ?>/pages/books.php" class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) === 'books.php') ? 'active' : ''; ?>">
         <i class="fas fa-book"></i>
         <span>Books</span>
     </a>
-    <a href="<?php echo isset($_SESSION['user_id']) ? '/bit/pages/profile.php' : '/bit/pages/login.php'; ?>"
+    <a href="<?php echo isset($_SESSION['user_id']) ? BASE_URL . '/pages/profile.php' : BASE_URL . '/pages/login.php'; ?>"
        class="nav-item <?php echo (basename($_SERVER['PHP_SELF']) === 'profile.php') ? 'active' : ''; ?>">
         <i class="fas fa-user"></i>
         <span>Profile</span>
@@ -194,7 +195,7 @@
     </button>
 </div>
 
-<script src="/bit/js/theme-toggle.js"></script>
+<script src="<?= BASE_URL ?>/js/theme-toggle.js"></script>
 <script>
     function toggleMobileSearch() {
         const searchBar = document.getElementById('mobile-search-bar');

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $page = 'books';
 $page_title = 'Edit Book';
 require_once '../includes/header.php';
@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <?php if ($book['image']): ?>
                     <div class="col-12 mt-2">
                         <p class="text-gray mb-2">Current Image:</p>
-                        <img src="/bit/assets/uploads/books/<?php echo $book['image']; ?>" alt="Book" style="max-width: 150px; border-radius: 8px;">
+                        <img src="<?= BASE_URL ?>/assets/uploads/books/<?php echo $book['image']; ?>" alt="Book" style="max-width: 150px; border-radius: 8px;">
                     </div>
                     <?php endif; ?>
                     <div class="col-12">

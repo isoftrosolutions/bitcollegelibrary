@@ -1,10 +1,10 @@
-<?php
+﻿<?php
 $page = 'users';
 $page_title = 'Verify User';
 require_once '../includes/header.php';
 
 if (!isset($_GET['id'])) {
-    header("Location: /bit/admin/dashboard.php");
+    header("Location: " . BASE_URL . "/admin/dashboard.php");
     exit();
 }
 
@@ -14,7 +14,7 @@ $notif_id = isset($_GET['notif_id']) ? (int)$_GET['notif_id'] : null;
 $user = get_user_info($user_id);
 
 if (!$user) {
-    header("Location: /bit/admin/users/index.php");
+    header("Location: " . BASE_URL . "/admin/users/index.php");
     exit();
 }
 
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div class="d-flex align-items-center mb-4">
                                 <div class="me-3">
                                     <?php if ($user['profile_image']): ?>
-                                        <img src="/bit/assets/uploads/profile/<?php echo $user['profile_image']; ?>" alt="Avatar" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; border: 2px solid var(--teal-accent);">
+                                        <img src="<?= BASE_URL ?>/assets/uploads/profile/<?php echo $user['profile_image']; ?>" alt="Avatar" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%; border: 2px solid var(--teal-accent);">
                                     <?php else: ?>
                                         <div class="theme-toggle" style="width: 80px; height: 80px; font-size: 2rem; cursor: default;">
                                             <i class="fas fa-user"></i>
@@ -128,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <button type="submit" class="btn btn-register py-3 px-5">
                             <i class="fas fa-check-circle me-2"></i> Verify & Issue Card
                         </button>
-                        <a href="/bit/admin/users/index.php" class="btn btn-outline-teal py-3 px-5 ms-2">Back</a>
+                        <a href="<?= BASE_URL ?>/admin/users/index.php" class="btn btn-outline-teal py-3 px-5 ms-2">Back</a>
                     </div>
                 </div>
             </form>

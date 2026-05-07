@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            fetch(`/bit/ajax/search_everything.php?q=${encodeURIComponent(query)}`)
+            fetch(`${window.BASE_URL}/ajax/search_everything.php?q=${encodeURIComponent(query)}`)
                 .then(response => response.json())
                 .then(data => {
                     displaySearchResults(data);
@@ -68,9 +68,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             <td>${ucfirst(user.faculty || '')}</td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="/bit/admin/users/profile.php?id=${user.id}" class="btn btn-sm btn-outline-info me-2"><i class="fas fa-eye"></i></a>
-                                    <a href="/bit/admin/users/edit.php?id=${user.id}" class="btn btn-sm btn-outline-teal me-2"><i class="fas fa-edit"></i></a>
-                                    <a href="/bit/admin/users/delete.php?id=${user.id}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></a>
+                                    <a href="${window.BASE_URL}/admin/users/profile.php?id=${user.id}" class="btn btn-sm btn-outline-info me-2"><i class="fas fa-eye"></i></a>
+                                    <a href="${window.BASE_URL}/admin/users/edit.php?id=${user.id}" class="btn btn-sm btn-outline-teal me-2"><i class="fas fa-edit"></i></a>
+                                    <a href="${window.BASE_URL}/admin/users/delete.php?id=${user.id}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></a>
                                 </div>
                             </td>
                         </tr>
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <tr>
                             <td>
                                 ${book.image ? 
-                                    `<img src="/bit/assets/uploads/books/${book.image}" alt="Book" style="width: 40px; height: 50px; object-fit: cover; border-radius: 4px;">` : 
+                                    `<img src="${window.BASE_URL}/assets/uploads/books/${book.image}" alt="Book" style="width: 40px; height: 50px; object-fit: cover; border-radius: 4px;">` : 
                                     `<div class="bg-dark d-flex align-items-center justify-content-center" style="width: 40px; height: 50px; border-radius: 4px;"><i class="fas fa-book text-gray small"></i></div>`
                                 }
                             </td>
@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             <td>${htmlspecialchars(book.author)}</td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="/bit/admin/books/edit.php?sn=${book.sn}" class="btn btn-sm btn-outline-teal me-2"><i class="fas fa-edit"></i></a>
-                                    <a href="/bit/admin/books/delete.php?sn=${book.sn}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></a>
+                                    <a href="${window.BASE_URL}/admin/books/edit.php?sn=${book.sn}" class="btn btn-sm btn-outline-teal me-2"><i class="fas fa-edit"></i></a>
+                                    <a href="${window.BASE_URL}/admin/books/delete.php?sn=${book.sn}" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure?')"><i class="fas fa-trash"></i></a>
                                 </div>
                             </td>
                         </tr>
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <td><span class="badge bg-${statusClass}">${ucfirst(rental.status)}</span></td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="/bit/admin/rentals.php" class="btn btn-sm btn-outline-info me-2"><i class="fas fa-eye"></i></a>
+                                    <a href="${window.BASE_URL}/admin/rentals.php" class="btn btn-sm btn-outline-info me-2"><i class="fas fa-eye"></i></a>
                                 </div>
                             </td>
                         </tr>

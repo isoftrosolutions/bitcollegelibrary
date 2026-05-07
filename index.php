@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once 'config/database.php';
 require_once 'includes/functions.php';
 
@@ -35,10 +35,10 @@ require_once 'includes/header-premium.php';
                     </p>
 
                     <div class="hero-actions-home">
-                        <a href="/bit/pages/books.php" class="btn-hero-primary">
+                        <a href="<?= BASE_URL ?>/pages/books.php" class="btn-hero-primary">
                             <i class="fas fa-search"></i> Search Books
                         </a>
-                        <a href="/bit/pages/login.php" class="btn-hero-secondary">
+                        <a href="<?= BASE_URL ?>/pages/login.php" class="btn-hero-secondary">
                             <i class="fas fa-user"></i> Student Login
                         </a>
                     </div>
@@ -166,12 +166,12 @@ require_once 'includes/header-premium.php';
 <div class="popular-strip">
     <div class="container">
         <span class="popular-label">Popular Searches:</span>
-        <a href="/bit/pages/books.php?search=DBMS" class="popular-tag">DBMS</a>
-        <a href="/bit/pages/books.php?search=C+Programming" class="popular-tag">C Programming</a>
-        <a href="/bit/pages/books.php?search=Electrical+Machine" class="popular-tag">Electrical Machine</a>
-        <a href="/bit/pages/books.php?search=Surveying" class="popular-tag">Surveying</a>
-        <a href="/bit/pages/books.php?search=Physics" class="popular-tag">Physics</a>
-        <a href="/bit/pages/books.php?search=AutoCAD" class="popular-tag">AutoCAD</a>
+        <a href="<?= BASE_URL ?>/pages/books.php?search=DBMS" class="popular-tag">DBMS</a>
+        <a href="<?= BASE_URL ?>/pages/books.php?search=C+Programming" class="popular-tag">C Programming</a>
+        <a href="<?= BASE_URL ?>/pages/books.php?search=Electrical+Machine" class="popular-tag">Electrical Machine</a>
+        <a href="<?= BASE_URL ?>/pages/books.php?search=Surveying" class="popular-tag">Surveying</a>
+        <a href="<?= BASE_URL ?>/pages/books.php?search=Physics" class="popular-tag">Physics</a>
+        <a href="<?= BASE_URL ?>/pages/books.php?search=AutoCAD" class="popular-tag">AutoCAD</a>
     </div>
 </div>
 
@@ -218,7 +218,7 @@ require_once 'includes/header-premium.php';
     <div class="container">
         <div class="section-header-flex">
             <h2 class="section-title-sm">Recently Added Books</h2>
-            <a href="/bit/pages/books.php" class="section-view-all">View All Books <i class="fas fa-arrow-right"></i></a>
+            <a href="<?= BASE_URL ?>/pages/books.php" class="section-view-all">View All Books <i class="fas fa-arrow-right"></i></a>
         </div>
 
         <div class="books-row-home">
@@ -233,7 +233,7 @@ require_once 'includes/header-premium.php';
             <div class="book-card-home">
                 <div class="book-cover-home">
                     <?php if (!empty($book['image']) && file_exists('assets/uploads/books/' . $book['image'])): ?>
-                        <img src="/bit/assets/uploads/books/<?php echo htmlspecialchars($book['image']); ?>"
+                        <img src="<?= BASE_URL ?>/assets/uploads/books/<?php echo htmlspecialchars($book['image']); ?>"
                              alt="<?php echo htmlspecialchars($book['book_name']); ?>">
                     <?php else: ?>
                         <div class="book-cover-home-bg">
@@ -246,7 +246,7 @@ require_once 'includes/header-premium.php';
                 <div class="book-info-home">
                     <div class="book-title-home"><?php echo htmlspecialchars($book['book_name']); ?></div>
                     <div class="book-author-home">Author: <?php echo htmlspecialchars($book['author']); ?></div>
-                    <a href="/bit/pages/books.php?sn=<?php echo $book['sn']; ?>" class="book-reserve-btn">Reserve</a>
+                    <a href="<?= BASE_URL ?>/pages/books.php?sn=<?php echo $book['sn']; ?>" class="book-reserve-btn">Reserve</a>
                 </div>
             </div>
             <?php
@@ -272,7 +272,7 @@ require_once 'includes/header-premium.php';
                 <div class="book-info-home">
                     <div class="book-title-home"><?php echo htmlspecialchars($book['name']); ?></div>
                     <div class="book-author-home">Author: <?php echo htmlspecialchars($book['author']); ?></div>
-                    <a href="/bit/pages/books.php" class="book-reserve-btn">Reserve</a>
+                    <a href="<?= BASE_URL ?>/pages/books.php" class="book-reserve-btn">Reserve</a>
                 </div>
             </div>
             <?php endforeach; endif; ?>
@@ -285,7 +285,7 @@ require_once 'includes/header-premium.php';
     <div class="container">
         <div class="section-header-flex">
             <h2 class="section-title-sm">Latest Resources</h2>
-            <a href="/bit/pages/books.php" class="section-view-all">View All Resources <i class="fas fa-arrow-right"></i></a>
+            <a href="<?= BASE_URL ?>/pages/books.php" class="section-view-all">View All Resources <i class="fas fa-arrow-right"></i></a>
         </div>
 
         <div class="resources-tabs-home">
@@ -456,8 +456,8 @@ require_once 'includes/header-premium.php';
                 <h2>Ready to Start Your Journey?</h2>
                 <p>Join thousands of students building successful careers through quality education and modern learning.</p>
                 <div class="home-cta-buttons">
-                    <a href="/bit/pages/register.php" class="btn-hero-primary">Apply Now <i class="fas fa-arrow-right"></i></a>
-                    <a href="/bit/pages/contact.php" class="btn-hero-secondary">Take a Tour</a>
+                    <a href="<?= BASE_URL ?>/pages/register.php" class="btn-hero-primary">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    <a href="<?= BASE_URL ?>/pages/contact.php" class="btn-hero-secondary">Take a Tour</a>
                 </div>
             </div>
         </div>

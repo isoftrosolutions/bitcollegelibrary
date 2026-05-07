@@ -1,9 +1,9 @@
-<?php
+﻿<?php
 require_once dirname(dirname(__DIR__)) . '/config/database.php';
 require_once dirname(dirname(__DIR__)) . '/includes/functions.php';
 
 if (!is_admin()) {
-    header("Location: /bit/pages/login.php");
+    header("Location: " . BASE_URL . "/pages/login.php");
     exit();
 }
 ?>
@@ -21,7 +21,8 @@ if (!is_admin()) {
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/bit/css/modern.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>/css/modern.css">
+    <script>window.BASE_URL = '<?= BASE_URL ?>';</script>
     <script>
         // Prevent theme flicker
         (function() {
@@ -35,30 +36,30 @@ if (!is_admin()) {
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="px-4 mb-5 text-center">
-                <img src="/bit/assets/images/logo.png" alt="Logo" style="width: 50px;">
+                <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="Logo" style="width: 50px;">
                 <h5 class="mt-2 text-teal fw-bold">BIT Admin</h5>
             </div>
             <nav>
-                <a href="/bit/admin/dashboard.php" class="nav-link-admin <?php echo $page == 'dashboard' ? 'active' : ''; ?>">
+                <a href="<?= BASE_URL ?>/admin/dashboard.php" class="nav-link-admin <?php echo $page == 'dashboard' ? 'active' : ''; ?>">
                     <i class="fas fa-th-large"></i> Dashboard
                 </a>
-                <a href="/bit/admin/books/index.php" class="nav-link-admin <?php echo $page == 'books' ? 'active' : ''; ?>">
+                <a href="<?= BASE_URL ?>/admin/books/index.php" class="nav-link-admin <?php echo $page == 'books' ? 'active' : ''; ?>">
                     <i class="fas fa-book"></i> Books Management
                 </a>
-                <a href="/bit/admin/users/index.php" class="nav-link-admin <?php echo $page == 'users' ? 'active' : ''; ?>">
+                <a href="<?= BASE_URL ?>/admin/users/index.php" class="nav-link-admin <?php echo $page == 'users' ? 'active' : ''; ?>">
                     <i class="fas fa-users"></i> Users Management
                 </a>
-                <a href="/bit/admin/payments.php" class="nav-link-admin <?php echo $page == 'payments' ? 'active' : ''; ?>">
+                <a href="<?= BASE_URL ?>/admin/payments.php" class="nav-link-admin <?php echo $page == 'payments' ? 'active' : ''; ?>">
                     <i class="fas fa-file-invoice-dollar"></i> Fee Payments
                 </a>
-                <a href="/bit/admin/rentals.php" class="nav-link-admin <?php echo $page == 'rentals' ? 'active' : ''; ?>">
+                <a href="<?= BASE_URL ?>/admin/rentals.php" class="nav-link-admin <?php echo $page == 'rentals' ? 'active' : ''; ?>">
                     <i class="fas fa-hand-holding"></i> Rentals Management
                 </a>
-                <a href="/bit/index.php" class="nav-link-admin">
+                <a href="<?= BASE_URL ?>/index.php" class="nav-link-admin">
                     <i class="fas fa-external-link-alt"></i> View Site
                 </a>
                 <hr class="mx-4 opacity-10">
-                <a href="/bit/logout.php" class="nav-link-admin text-danger">
+                <a href="<?= BASE_URL ?>/logout.php" class="nav-link-admin text-danger">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </a>
             </nav>

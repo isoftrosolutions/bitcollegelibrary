@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $page = 'users';
 $page_title = 'Library Card Preview';
 require_once '../includes/header.php';
@@ -156,7 +156,7 @@ if (!$user) {
     <!-- The Card -->
     <div class="card-print-area mb-5">
         <div class="card-header-bit">
-            <img src="/bit/assets/images/logo.png" class="bit-logo-card" alt="BIT">
+            <img src="<?= BASE_URL ?>/assets/images/logo.png" class="bit-logo-card" alt="BIT">
             <div class="bit-text-card">
                 <h2>Birgunj Institute of Technology</h2>
                 <p>(An Engineering College affiliated to CTEVT)</p>
@@ -195,7 +195,7 @@ if (!$user) {
             
             <div class="photo-area">
                 <?php if ($user['image']): ?>
-                    <img src="/bit/assets/uploads/users/<?php echo $user['image']; ?>" alt="Photo">
+                    <img src="<?= BASE_URL ?>/assets/uploads/users/<?php echo $user['image']; ?>" alt="Photo">
                 <?php else: ?>
                     <i class="fas fa-user-circle fa-5x text-silver"></i>
                 <?php endif; ?>

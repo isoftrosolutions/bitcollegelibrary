@@ -3,7 +3,7 @@ require_once '../config/database.php';
 require_once '../includes/functions.php';
 
 if (!is_admin()) {
-    header("Location: /bit/pages/login.php");
+    header("Location: " . BASE_URL . "/pages/login.php");
     exit();
 }
 

@@ -1,4 +1,4 @@
-</div><!-- /content-wrapper -->
+﻿</div><!-- /content-wrapper -->
 
 <!-- Footer -->
 <footer class="footer-home">
@@ -8,7 +8,7 @@
             <!-- Brand -->
             <div>
                 <div class="footer-home-brand-logo">
-                    <img src="/bit/assets/images/logo.png" alt="BIT College Logo">
+                    <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="BIT College Logo">
                     <span>BIT College</span>
                 </div>
                 <p class="footer-home-brand-desc">
@@ -28,10 +28,10 @@
                 <nav class="footer-home-links">
                     <a href="#">About Us</a>
                     <a href="#programs">Academics</a>
-                    <a href="/bit/pages/books.php">Library</a>
+                    <a href="<?= BASE_URL ?>/pages/books.php">Library</a>
                     <a href="#resources">Resources</a>
                     <a href="#">Notices</a>
-                    <a href="/bit/pages/contact.php">Contact Us</a>
+                    <a href="<?= BASE_URL ?>/pages/contact.php">Contact Us</a>
                 </nav>
             </div>
 
@@ -39,7 +39,7 @@
             <div>
                 <div class="footer-home-col-title">Useful Links</div>
                 <nav class="footer-home-links">
-                    <a href="/bit/pages/login.php">Student Login</a>
+                    <a href="<?= BASE_URL ?>/pages/login.php">Student Login</a>
                     <a href="#">Downloads</a>
                     <a href="#">Online Forms</a>
                     <a href="#">Fee Structure</a>
@@ -87,7 +87,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Custom JS -->
-<script src="/bit/js/premium.js"></script>
+<script src="<?= BASE_URL ?>/js/premium.js"></script>
 
 </body>
 </html>

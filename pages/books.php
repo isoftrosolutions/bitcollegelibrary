@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once '../config/database.php';
 require_once '../includes/functions.php';
 
@@ -67,7 +67,7 @@ $current_page_books = array_slice($books, $offset, $limit);
                 <div class="book-card">
                     <div class="book-img-placeholder">
                         <?php if ($book['image']): ?>
-                            <img src="/bit/assets/uploads/books/<?php echo $book['image']; ?>" alt="Book Cover" class="img-fluid rounded" style="height: 100%; width: 100%; object-fit: cover;">
+                            <img src="<?= BASE_URL ?>/assets/uploads/books/<?php echo $book['image']; ?>" alt="Book Cover" class="img-fluid rounded" style="height: 100%; width: 100%; object-fit: cover;">
                         <?php else: ?>
                             <i class="fas fa-book"></i>
                         <?php endif; ?>

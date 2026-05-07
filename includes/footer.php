@@ -1,4 +1,4 @@
-    </div> <!-- Close content-wrapper -->
+﻿    </div> <!-- Close content-wrapper -->
     
     <!-- Footer -->
     <footer class="footer">
@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <h5 class="d-flex align-items-center mb-4">
-                        <img src="/bit/assets/images/logo.png" alt="BIT Logo" style="height: 30px; margin-right: 10px;">
+                        <img src="<?= BASE_URL ?>/assets/images/logo.png" alt="BIT Logo" style="height: 30px; margin-right: 10px;">
                         BIT Library
                     </h5>
                     <p>Empowering the Birgunj Institute of Technology community with a vast world of knowledge and digital resources.</p>
@@ -21,10 +21,10 @@
                 <div class="col-md-2 mb-4">
                     <h5>Resources</h5>
                     <ul class="list-unstyled">
-                        <li><a href="/bit/pages/books.php" class="text-decoration-none">E-Books</a></li>
-                        <li><a href="/bit/pages/latest.php" class="text-decoration-none">Latest Arrivals</a></li>
-                        <li><a href="/bit/pages/return.php" class="text-decoration-none">Return Book</a></li>
-                        <li><a href="/bit/pages/contact.php" class="text-decoration-none">Support</a></li>
+                        <li><a href="<?= BASE_URL ?>/pages/books.php" class="text-decoration-none">E-Books</a></li>
+                        <li><a href="<?= BASE_URL ?>/pages/latest.php" class="text-decoration-none">Latest Arrivals</a></li>
+                        <li><a href="<?= BASE_URL ?>/pages/return.php" class="text-decoration-none">Return Book</a></li>
+                        <li><a href="<?= BASE_URL ?>/pages/contact.php" class="text-decoration-none">Support</a></li>
                     </ul>
                 </div>
                 
@@ -66,7 +66,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Custom JS -->
-    <script src="/bit/js/script.js"></script>
+    <script src="<?= BASE_URL ?>/js/script.js"></script>
     
 </body>
 </html>
