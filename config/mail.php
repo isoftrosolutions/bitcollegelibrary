@@ -1,33 +1,29 @@
 <?php
-<<<<<<< HEAD
-// SMTP Configuration
-define('MAIL_HOST', 'smtp.gmail.com');
-define('MAIL_USERNAME', 'pdewbrath@gmail.com'); // Replace with your email
-define('MAIL_PASSWORD', '');   // Replace with your app password
-define('MAIL_PORT', 587);
-define('MAIL_ENCRYPTION', 'tls');
-define('MAIL_FROM_EMAIL', 'library@bit.edu.np');
-define('MAIL_FROM_NAME', 'BIT Library');
-=======
-// Load DB connection (session already started inside database.php)
-if (!defined('DB_HOST')) {
-    require_once __DIR__ . '/database.php';
-}
+// Mail configuration - loads settings from database
 
-// Fetch mail settings from DB
-$_mail_row = null;
-$_mail_result = $conn->query("SELECT * FROM mail_settings ORDER BY id ASC LIMIT 1");
-if ($_mail_result && $_mail_result->num_rows > 0) {
-    $_mail_row = $_mail_result->fetch_assoc();
-}
+// Fetch mail settings from database
+$query = "SELECT * FROM mail_settings WHERE id = 1 LIMIT 1";
+$result = $conn->query($query);
 
-// Fall back to hard-coded defaults if table is empty / missing
-define('MAIL_HOST',       $_mail_row['mail_host']       ?? 'smtp.gmail.com');
-define('MAIL_USERNAME',   $_mail_row['mail_username']   ?? 'pdewbrath@gmail.com');
-define('MAIL_PASSWORD',   $_mail_row['mail_password']   ?? 'nkok jcyl wztn daev');
-define('MAIL_PORT',       (int)($_mail_row['mail_port'] ?? 587));
-define('MAIL_ENCRYPTION', $_mail_row['mail_encryption'] ?? 'tls');
-define('MAIL_FROM_EMAIL', $_mail_row['mail_from_email'] ?? 'library@bit.edu.np');
-define('MAIL_FROM_NAME',  $_mail_row['mail_from_name']  ?? 'BIT Library');
->>>>>>> 821117b ( database file  fix)
+if ($result && $result->num_rows > 0) {
+    $mail_settings = $result->fetch_assoc();
+
+    // Define mail constants
+    define('MAIL_HOST', $mail_settings['mail_host']);
+    define('MAIL_USERNAME', $mail_settings['mail_username']);
+    define('MAIL_PASSWORD', $mail_settings['mail_password']);
+    define('MAIL_PORT', $mail_settings['mail_port']);
+    define('MAIL_ENCRYPTION', $mail_settings['mail_encryption']);
+    define('MAIL_FROM_EMAIL', $mail_settings['mail_from_email']);
+    define('MAIL_FROM_NAME', $mail_settings['mail_from_name']);
+} else {
+    // Fallback configuration for demo/development
+    define('MAIL_HOST', 'smtp.gmail.com');
+    define('MAIL_USERNAME', 'your-email@gmail.com');
+    define('MAIL_PASSWORD', 'your-app-password');
+    define('MAIL_PORT', 587);
+    define('MAIL_ENCRYPTION', 'tls');
+    define('MAIL_FROM_EMAIL', 'noreply@yourdomain.com');
+    define('MAIL_FROM_NAME', 'Your App Name');
+}
 ?>
