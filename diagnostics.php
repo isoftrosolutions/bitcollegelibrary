@@ -25,7 +25,7 @@ echo "<br>";
 
 // Test database connection
 echo "<h2>Database Connection Test</h2>";
-$host = 'deschoolproject.com';
+$host = 'localhost';
 $user = 'ektamultp_bit';
 $pass = 'zDJ+iZNrsU,-YKp4';
 $db = 'ektamultp_bit';
